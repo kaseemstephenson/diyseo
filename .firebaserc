@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "diyseo-1bdc0": {
+      "hosting": {
+        "diyseo": [
+          "diyseo-1bdc0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "diyseo-1bdc0"
+  }
+}
