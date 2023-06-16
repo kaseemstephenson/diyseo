@@ -1,24 +1,45 @@
 <div class="container-fluid">
   <br>
-<p #test class="line-1 anim-typewriter">Welcome to DIYSEO by LESEO</p>
+  
+<p #test class="line-1 anim-typewriter" >Welcome to DIYSEO by LESEO</p>
+
+<div class="container-fluid" id="textBox">
+    
+  
+
+    <p  *ngIf="pOpen == 0"#pp class="line-1 anim-typewriter" style="color:white">Choose a prompt to get started!</p>
+        <div  *ngIf="pOpen == 1"#pp class="line-1 anim-typewriter" style="color:white">
+        <div class="spinner-border" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div></div>
+                <p  *ngIf="pOpen == 2"#pp class="line-1 anim-typewriter" style="color:white">{{gptresponse.content}}</p>
+
+
+
+</div>
+
  <div class="pcon">
  <div class="container-fluid py-2">
     <h2 class="font-weight-light"></h2>
-    <div class="d-flex flex-row flex-nowrap">
-        <a> <div class="card card-body">Card</div></a>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
+    <div  class="d-flex flex-row flex-nowrap">
+
+
+
+<div  *ngFor="let c of cardsData1" class="card card-body">
+    <h5 class="card-title">{{c.title}}</h5>
+    <p class="card-text">{{c.description}}</p>
+    <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">>_</span>
+  <input type="text" [(ngModel)]="keyword" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Keyword" aria-label="Keyword1,Keyword2..." aria-describedby="basic-addon1">
+</div>
+    <a (click)="onClick(c.title,keyword)" class="btn btn-primary">Open Prompt</a>
+</div>
+
+
+
+
+ 
+
     </div>
 </div>
 
@@ -31,20 +52,22 @@
  <div class="container-fluid py-2">
     <h2 class="font-weight-light"></h2>
     <div class="d-flex flex-row flex-nowrap">
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
+
+
+
+
+<div  *ngFor="let c of cardsData2" class="card card-body">
+    <h5 class="card-title">{{c.title}}</h5>
+    <p class="card-text">{{c.description}}</p>
+     <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">>_</span>
+  <input type="text" [(ngModel)]="keyword" [ngModelOptions]="{standalone: true}"  class="form-control" placeholder="Keyword" aria-label="Keyword1,Keyword2..." aria-describedby="basic-addon1">
+</div>
+    <button (click)="onClick(c.title,keyword)"class="btn btn-primary">Open Prompt</button>
+</div>
+
+
+
     </div>
 </div>
 

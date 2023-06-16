@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { FawComponent } from './faw/faw.component';
 import { SettingsComponent } from './settings/settings.component';
 import { BillingComponent } from './billing/billing.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BillingComponent } from './billing/billing.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
